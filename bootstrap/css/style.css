@@ -1,0 +1,19 @@
+.navbar-toggle{
+
+}
+body{
+	font-family: Muli !important; font-style: normal !important;
+}
+.bootstrap-logo{
+  width: 100px;
+  height: 50px;
+}
+.navbar-collapse{
+
+}
+.nav,.navbar-default{
+	background-image: none !important;
+	background-color: #ffffff !important;
+	border-color:#ffffff !important;
+	-webkit-box-shadow: none !important;
+}
