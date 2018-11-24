@@ -17,3 +17,7 @@ body{
 	border-color:#ffffff !important;
 	-webkit-box-shadow: none !important;
 }
+
+.mt-30{
+	margin-top: 30px;
+}
