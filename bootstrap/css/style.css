@@ -21,3 +21,18 @@ body{
 .mt-30{
 	margin-top: 30px;
 }
+.mt-pd{
+	margin-left: 30px;
+	margin-top: 5px;
+}
+.noidung{
+	background-color:#f8f8f8;
+	height:290px;display:flex;
+	justify-content:center;
+	align-items:center;
+	border-radius:10px;
+
+}
+.sizenoidung{
+	font-size: 30px;
+}
