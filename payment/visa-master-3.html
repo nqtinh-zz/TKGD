@@ -25,7 +25,91 @@
             height: 30px;
             margin-left: 20px;
         }
-</style>
+        .creditCardForm {
+    max-width: 700px;
+    background-color: #fff;
+    margin: 100px auto;
+    overflow: hidden;
+    padding: 25px;
+    color: #4c4e56;
+}
+.creditCardForm label {
+    width: 100%;
+    margin-bottom: 10px;
+}
+.creditCardForm .heading h1 {
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    color: #4c4e56;
+}
+.creditCardForm .payment {
+    float: left;
+    font-size: 18px;
+    padding: 10px 25px;
+    margin-top: 20px;
+    position: relative;
+}
+.creditCardForm .payment .form-group {
+    float: left;
+    margin-bottom: 15px;
+}
+.creditCardForm .payment .form-control {
+    line-height: 40px;
+    height: auto;
+    padding: 0 16px;
+}
+.creditCardForm .owner {
+    width: 63%;
+    margin-right: 10px;
+}
+.creditCardForm .CVV {
+    width: 35%;
+}
+.creditCardForm #card-number-field {
+    width: 100%;
+}
+.creditCardForm #expiration-date {
+    width: 49%;
+}
+.creditCardForm #credit_cards {
+    width: 50%;
+    margin-top: 25px;
+    text-align: right;
+}
+.creditCardForm #pay-now {
+    width: 100%;
+    margin-top: 25px;
+}
+.creditCardForm .payment .btn {
+    width: 100%;
+    margin-top: 3px;
+    font-size: 24px;
+    background-color: #2ec4a5;
+    color: white;
+}
+.creditCardForm .payment select {
+    padding: 10px;
+    margin-right: 15px;
+}
+.transparent {
+    opacity: 0.2;
+}
+@media(max-width: 650px) {
+    .creditCardForm .owner,
+    .creditCardForm .CVV,
+    .creditCardForm #expiration-date,
+    .creditCardForm #credit_cards {
+        width: 100%;
+    }
+    .creditCardForm #credit_cards {
+        text-align: left;
+    }
+}
+.pick >span{
+    color:white;
+}
+    </style>
+
 </head>
 
 <body>
@@ -114,7 +198,7 @@
                                         <h3><a href="#" class="list-menu__item prg bg-red-grd">1.200.000 VND</a></h3>
                                     </li>
                                     <li>
-                                        <img src="assets/images/avatar.png" alt="Avatar" class="avatar">
+                                            <img src="assets/images/avatar.png" alt="Avatar" class="avatar">
                                     </li>
                                 </ul>
                             </div>
@@ -139,8 +223,8 @@
                                     <li class="payment-step step12 active">
                                         <span>2</span> <b>Thanh toán</b>
                                     </li>
-                                    <li class="payment-line step23"></li>
-                                    <li class="payment-step step23">
+                                    <li class="payment-line step23 active"></li>
+                                    <li class="payment-step step23 active">
                                         <span>3</span> <b>Hoàn tất</b>
                                     </li>
                                 </ul>
@@ -160,6 +244,14 @@
                                             <label>Giá tiền:</label>
                                             <span class="right-content order_code">1.000.000 VND</span>
                                         </p>
+                                        <p>
+                                            <label>Nhà cung cấp dịch vụ:</label>
+                                            <span class="right-content order_code">JAPWORLD</span>
+                                        </p>
+                                        <p>
+                                            <label>Phí dịch vụ:</label>
+                                            <span class="right-content order_code">0 VND</span>
+                                        </p>
                                     </div>
                                 </div>
                                 <div class="payment-box" style="display: none;">
@@ -175,70 +267,90 @@
                                     <div id="payment-method-select">
                                         <div class="payment-box">
                                             <div id="payment-method-select-detail">
-                                                <h3>Chọn hình thức thanh toán</h3>
-                                                <ul id="payment-method-select-header">
-                                                    <li class="" ><a  href="visa-master.html"><span style="color:black">Thẻ Visa, Master</span></a></li>
-                                                    <li class=""><a href="chuyenkhoan.html"><span style="color:black">Chuyển khoản</span></a></li>
-                                                    <li class="active"><a href="momo.html"><span style="color:white">TT bằng Momo</span></a></li>
-                                                    <li class=""><a href="taikhoancanhan.html"><span style="color:black">TT bằng tài khoản JPLT</span> </a></li>
-                                                </ul>
-
-                                                <div class="payment-method-detail active ">
-                                                        <p>
-                                                                <b>TT bằng Momo </b>
-                                                            </p>
-                                                            <p>Vui lòng nhập thông tin tài khoản quý khách cho chúng tôi theo thông tin
-                                                                sau:</p>
-                                                                <table>
-                                                                    <tr>
-                                                                        <td>Số điện thoại momo</td>
-                                                                        <td>
-                                                                            <input style="margin-left:25px" type="text" id="payment-require-phone-input">
-                                                                        </td>
-                                                                    </tr>
-                                                                </table><br>
-                                                                <table>
-                                                                    <tr>
-                                                                        <td>Họ và tên</td>
-                                                                        <td>
-                                                                            <input style="margin-left:95px" type="text" id="payment-require-phone-input">
-                                                                        </td>
-                                                                    </tr>
-                                                                </table>
-                                                                    <!---->
-                                                                </table>
-                                                                <br><br>
-                                                                <li>Hãy bấm nút <b>Hoàn tất</b> dưới đây để hoàn tất đơn
-                                                                    đặt hàng</li>
-                                                            </ul>
+                                                <div id="payment-method-select-content">
+                                                    <div class="payment-method-detail active">
+                                                        <div class="creditCardForm">
+                                                                <div class="heading">
+                                                                    <h1>Thông tin thẻ </h1>
+                                                                </div>
+                                                                <div class="payment">
+                                                                    <form>
+                                                                        <div class="form-group owner">
+                                                                            <label for="owner">Chủ thẻ</label>
+                                                                            <input type="text" class="form-control" id="owner">
+                                                                        </div>
+                                                                        <div class="form-group CVV">
+                                                                            <label for="cvv">CVV</label>
+                                                                            <input type="text" class="form-control" id="cvv">
+                                                                        </div>
+                                                                        <div class="form-group" id="card-number-field">
+                                                                            <label for="cardNumber">Số thẻ</label>
+                                                                            <input type="text" class="form-control" id="cardNumber">
+                                                                        </div>
+                                                                        <div class="form-group" id="expiration-date">
+                                                                            <label>Thời gian hết hạn</label>
+                                                                            <select>
+                                                                                <option value="01">January</option>
+                                                                                <option value="02">February </option>
+                                                                                <option value="03">March</option>
+                                                                                <option value="04">April</option>
+                                                                                <option value="05">May</option>
+                                                                                <option value="06">June</option>
+                                                                                <option value="07">July</option>
+                                                                                <option value="08">August</option>
+                                                                                <option value="09">September</option>
+                                                                                <option value="10">October</option>
+                                                                                <option value="11">November</option>
+                                                                                <option value="12">December</option>
+                                                                            </select>
+                                                                            <select>
+                                                                                <option value="16"> 2018</option>
+                                                                                <option value="17"> 2019</option>
+                                                                                <option value="18"> 2020</option>
+                                                                                <option value="19"> 2021</option>
+                                                                                <option value="20"> 2022</option>
+                                                                                <option value="21"> 2023</option>
+                                                                            </select>
+                                                                        </div>
+                                                                        <div class="form-group" id="credit_cards">
+                                                                            <img src="assets/images/visa.jpg" id="visa">
+                                                                            <img src="assets/images/mastercard.jpg" id="mastercard">
+                                                                        </div>
+                                                                       <!-- <div class="form-group" id="pay-now">
+                                                                            <button type="submit" class="btn btn-default" id="confirm-purchase">Confirm</button>
+                                                                        </div>-->
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                    </div>
+                                                   
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div id="payment-require-info">
-                                        <div class="payment-box">
-                                            <p>
-                                                <b>Hãy bổ sung thêm thông tin dưới đây để tiếp tục thanh toán</b>
-                                            </p>
-                                            <table>
-                                                <tr>
-                                                    <td>Số điện thoại</td>
-                                                    <td>
-                                                        <input type="text" id="payment-require-phone-input">
-                                                    </td>
-                                                </tr>
-                                                <!---->
-                                            </table>
+                                        <div id="payment-require-info">
+                                            <div class="payment-box">
+                                                <p>
+                                                    <b>Hãy bổ sung thêm thông tin dưới đây để tiếp tục thanh toán</b>
+                                                </p>
+                                                <table>
+                                                    <tr>
+                                                        <td>Số điện thoại</td>
+                                                        <td>
+                                                            <input type="text" id="payment-require-phone-input">
+                                                        </td>
+                                                    </tr>
+                                                    <!---->
+                                                </table>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div id="payment-method-footer">
-                                        <p id="payment-footer-left">
-                                            <input type="checkbox" id="chk-charge-me" checked="checked" class="payment-checkbox">
-                                            <label for="chk-charge-me" class="payment-label">Kích hoạt thẻ cho
-                                                chính tài khoản này</label></p> <a href="../chitietkhoahoc.html" class="btn btn-light" id="payment-return">Quay
-                                            lại</a>
-                                        <a href="momo-3.html"><span id="payment-process-btn" class="btn btn-success">Thanh
-                                                toán</span></a>
+                                        <div id="payment-method-footer">
+                                            <p id="payment-footer-left">
+                                                <input type="checkbox" id="chk-charge-me" checked="checked" class="payment-checkbox">
+                                                <label for="chk-charge-me" class="payment-label">Kích hoạt thẻ cho
+                                                    chính tài khoản này</label></p> <a href="visa-master.html" class="btn btn-light"
+                                                id="payment-return">Quay lại</a>
+                                                <a href="thanhtoanthanhcong.html"><span id="payment-process-btn" class="btn btn-success">Hoàn tất</span></a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -247,12 +359,10 @@
                 </div>
             </div>
         </div>
-    </div>
 
 
-   
-         <!-- Footer -->
-         <div id="footer">
+        <!-- Footer -->
+        <div id="footer">
             <div class="above-footer">
                 <div class="container">
                     <div class="row">
@@ -299,6 +409,7 @@
                 </div>
             </div>
         </div>
+
     </div>
 </body>
 
